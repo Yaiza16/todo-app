@@ -23,7 +23,7 @@
           </div>
         </div>
         <form action="#" class="task" id="form">
-          <button class="button button--disabled"></button>
+          <div class="button button--disabled"></div>
           <input type="text" class="input" id="input-text" placeholder="Create a new todo...">
         </form>
       </div>
@@ -33,36 +33,14 @@
         <div class="main-container">
           <div class="todo-list" id="todo-list">
             <div class="todo-list__container" id="todo-list__container">
-              <!-- <div class="task task--list task--completed">
-                <button class="button"></button>
-                <p class="input">Complete online JavaScript course</p>
-                <div class="delete-icon-container">
-                  <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
-                </div>           
-              </div>
-              
-              <div class="task task--list">
-                <button class="button"></button>
-                <p class="input">Job around the park 3x</p>
-                <div class="delete-icon-container">
-                  <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
-                </div> 
-              </div>
-              
-              <div class="task task--list">
-                <button class="button"></button>
-                <p class="input">10 minutes meditation</p>
-                <div class="delete-icon-container">
-                  <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
-                </div> 
-              </div> -->
+              <!-- Add tasks -->
             </div>
 
             <div class="dynamic-items-container">
               <div class="items-left">
                 <p class="items-left__text"><span id="number-dynamic">5</span> items left</p>
               </div>
-              <div class="items-status">
+              <div class="items-status" id="items-status">
                 <p class="items-status__item" id="all-status">All</p>
                 <p class="items-status__item" id="active-status">Active</p>
                 <p class="items-status__item" id="completed-status">Completed</p>

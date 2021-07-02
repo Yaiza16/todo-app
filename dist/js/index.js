@@ -6,6 +6,8 @@ const form = document.getElementById('form')
 const input = document.getElementById('input-text');
 const todoContainer = document.getElementById('todo-list__container')
 const numberDynamic = document.getElementById('number-dynamic')
+const itemsStatus = document.getElementById('items-status')
+const itemStatus = document.querySelectorAll('.items-status__item')
 let buttonTask;
 
 
@@ -28,7 +30,7 @@ let tasks = [
 
 
 document.addEventListener('DOMContentLoaded', () =>{
-    taskListUpdate()
+    taskListUpdate(tasks)
 })
 
 toggle.addEventListener('click', () =>{
@@ -50,10 +52,16 @@ todoContainer.addEventListener('click', e =>{
                 }else{
                     task.status = "Actived"
                 }
-                taskListUpdate()
+                taskListUpdate(tasks)
+                focusChange(document.querySelector('.items-status__item--actived'))
             }
         })
     }
+})
+
+itemsStatus.addEventListener('click', e =>{
+    let item = e.target
+    focusChange(item)
 })
 
 
@@ -85,9 +93,9 @@ let toggleTheme = () =>{
 
 
 // Load task list
-const taskListUpdate = () => {
+const taskListUpdate = (tasksList) => {
     todoContainer.innerHTML = ""
-    tasks.forEach(task => {
+    tasksList.forEach(task => {
         let container = document.createElement('div')
         container.classList.add('task', 'task--list')
 
@@ -137,10 +145,27 @@ const newTaskUpdate = () =>{
         "status": 'Actived'
     }
     tasks.push(newItemTask);
-    taskListUpdate()
+    taskListUpdate(tasks)
 }
 
-//Change task's status
-const statusChanged = () =>{
+//Change focus status
+const focusChange = (item) =>{
+    itemStatus.forEach(el =>{
+        if (el.classList.contains('items-status__item--actived')){
+            el.classList.remove('items-status__item--actived')
+        }
+    })
 
+    if (item == document.getElementById('all-status')){
+        taskListUpdate(tasks)
+        item.classList.add('items-status__item--actived')
+    } else if(item == document.getElementById('active-status')){
+        let newList = tasks.filter(el => el.status == "Actived")
+        taskListUpdate(newList);
+        item.classList.add('items-status__item--actived')
+    } else if(item == document.getElementById('completed-status')){
+        let newList = tasks.filter(el => el.status == "Completed")
+        taskListUpdate(newList);
+        item.classList.add('items-status__item--actived')
+    }
 }

@@ -41,6 +41,13 @@
         cursor: pointer;
         transition: all .2s ease-in-out;
 
+        &--actived{
+            color: var(--c-activated-filter);
+
+            &:hover{
+                color: var(--c-activated-filter)
+            }
+        }
 
         &:hover{
             color: var(--c-font);

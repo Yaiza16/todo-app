@@ -166,6 +166,12 @@ html {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+.items-status__item--actived {
+  color: var(--c-activated-filter);
+}
+.items-status__item--actived:hover {
+  color: var(--c-activated-filter);
+}
 .items-status__item:hover {
   color: var(--c-font);
 }
