@@ -8,6 +8,7 @@ const todoContainer = document.getElementById('todo-list__container')
 const numberDynamic = document.getElementById('number-dynamic')
 const itemsStatus = document.getElementById('items-status')
 const itemStatus = document.querySelectorAll('.items-status__item')
+const clearCompleted = document.getElementById('clear-completed');
 let buttonTask;
 
 
@@ -44,7 +45,6 @@ form.addEventListener('submit', () => {
 todoContainer.addEventListener('click', e =>{
     const ele = e.target
     if (ele.classList.contains('button')){
-        console.log(ele.nextSibling.innerHTML)
         tasks.forEach(task =>{
             if (task.def == ele.nextSibling.innerHTML){
                 if (task.status == "Actived"){
@@ -56,13 +56,22 @@ todoContainer.addEventListener('click', e =>{
                 focusChange(document.querySelector('.items-status__item--actived'))
             }
         })
-    }
+    } else if(ele.classList.contains('delete-icon')){
+         removeTask(ele)
+     }
 })
 
 itemsStatus.addEventListener('click', e =>{
     let item = e.target
     focusChange(item)
 })
+
+clearCompleted.addEventListener('click',() =>{
+    let newList = tasks.filter(el => el.status == "Actived")
+    tasks = newList
+    taskListUpdate(tasks);
+})
+
 
 
 
@@ -169,3 +178,22 @@ const focusChange = (item) =>{
         item.classList.add('items-status__item--actived')
     }
 }
+
+//Remove task
+const removeTask = cross =>{
+    let item = cross.parentNode.previousSibling;
+    let itemPosition = -1;
+    tasks.forEach(task =>{
+        itemPosition++
+        console.log(item.innerHTML)
+        console.log(task.def)
+        if (item.innerHTML == task.def){
+            tasks.splice(itemPosition, 1)
+        }
+    })
+    taskListUpdate(tasks)
+    itemsLeftUpdate()
+}
+
+
+//Clear completed
