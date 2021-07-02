@@ -1,8 +1,5 @@
 .app{
     width: 100vw;
-    transition: background-color .3s ease-in;
-
-    & *{
-        transition: unset;
-    }
+    background: var(--c-bg);
+    min-height: 100vh;
 }

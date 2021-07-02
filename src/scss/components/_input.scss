@@ -64,12 +64,15 @@
     background: var(--c-bg-task);
     border: 1px solid var(--c-border-circle);
     margin-right: 1rem;
-    cursor: pointer;
-    transition: v.$transition;
 
-    &:hover{
-        border-color: var(--c-gradient-first) var(--c-gradient-first) var(--c-gradient-second) var(--c-gradient-second);
-        transform: rotate(-450deg);
+    &--tasks-list{
+        transition: v.$transition;
+        cursor: pointer;
+
+        &:hover{
+            border-color: var(--c-gradient-first) var(--c-gradient-first) var(--c-gradient-second) var(--c-gradient-second);
+            transform: rotate(-450deg);
+        }
     }
 }
 

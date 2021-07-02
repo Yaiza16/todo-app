@@ -35,27 +35,25 @@ html {
 }
 
 .app[data-theme=dark] {
-  --c-logo: black;
-  --c-bg: #fafafa;
-  --c-bg-task: black;
+  --c-logo: white;
+  --c-bg: #161722;
+  --c-bg-task: #25273c;
   --c-gradient: linear-gradient(145deg, #57ddff, #c058f3);
   --c-gradient-first: #57ddff;
   --c-gradient-second: #c058f3;
-  --c-border-circle: #e4e5f1;
-  --c-border-list-task: #9394a5;
-  --c-font: #fafafa;
-  --c-font-light: #e4e5f1;
-  --c-font-completed: #e4e5f1;
+  --c-border-circle: #4d5066;
+  --c-border-list-task: #393a4c;
+  --c-font: #cacde8;
+  --c-font-light: #4d5066;
+  --c-font-completed: #4d5066;
   --c-activated-filter: #3a7bfd;
   --bg-header: url(/dist/images/bg-desktop-light.jpg);
 }
 
 .app {
   width: 100vw;
-  transition: background-color 0.3s ease-in;
-}
-.app * {
-  transition: unset;
+  background: var(--c-bg);
+  min-height: 100vh;
 }
 
 .header {
@@ -244,10 +242,12 @@ html {
   background: var(--c-bg-task);
   border: 1px solid var(--c-border-circle);
   margin-right: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in;
 }
-.button:hover {
+.button--tasks-list {
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+.button--tasks-list:hover {
   border-color: var(--c-gradient-first) var(--c-gradient-first) var(--c-gradient-second) var(--c-gradient-second);
   transform: rotate(-450deg);
 }

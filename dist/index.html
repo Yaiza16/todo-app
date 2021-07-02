@@ -22,10 +22,9 @@
             <img src="images/icon-sun.svg" class="toggle-icon toggle-icon--hidden" id="icon-dark">
           </div>
         </div>
-        <form action="#" class="task">
-          <button class="button"></button>
-          <input type="text" class="input" placeholder="Create a new todo...">
-          <!-- <input type="submit"> -->
+        <form action="#" class="task" id="form">
+          <button class="button button--disabled"></button>
+          <input type="text" class="input" id="input-text" placeholder="Create a new todo...">
         </form>
       </div>
     </header>
@@ -33,29 +32,31 @@
     <main class="main">
         <div class="main-container">
           <div class="todo-list" id="todo-list">
-            <!-- <div class="task task--list task--completed">
-              <button class="button"></button>
-              <p class="input">Complete online JavaScript course</p>
-              <div class="delete-icon-container">
-                <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
-              </div>           
+            <div class="todo-list__container" id="todo-list__container">
+              <!-- <div class="task task--list task--completed">
+                <button class="button"></button>
+                <p class="input">Complete online JavaScript course</p>
+                <div class="delete-icon-container">
+                  <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
+                </div>           
+              </div>
+              
+              <div class="task task--list">
+                <button class="button"></button>
+                <p class="input">Job around the park 3x</p>
+                <div class="delete-icon-container">
+                  <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
+                </div> 
+              </div>
+              
+              <div class="task task--list">
+                <button class="button"></button>
+                <p class="input">10 minutes meditation</p>
+                <div class="delete-icon-container">
+                  <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
+                </div> 
+              </div> -->
             </div>
-
-            <div class="task task--list">
-              <button class="button"></button>
-              <p class="input">Job around the park 3x</p>
-              <div class="delete-icon-container">
-                <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
-              </div> 
-            </div>
-
-            <div class="task task--list">
-              <button class="button"></button>
-              <p class="input">10 minutes meditation</p>
-              <div class="delete-icon-container">
-                <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
-              </div> 
-            </div> -->
 
             <div class="dynamic-items-container">
               <div class="items-left">
@@ -79,6 +80,6 @@
     </footer>
   </div>
 
-  <script type="module" src="js/index.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
