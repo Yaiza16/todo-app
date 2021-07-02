@@ -31,14 +31,60 @@
     color: var(--c-logo);
 }
 
+.toggle-container{
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+}
+
 .toggle-icon{
+    cursor: pointer;
+    position: absolute;
+    animation: slideIn .8s;
+
 
     &--hidden{
-        display: none;
-        // Add animation
+        transform: translate(-100%);
+        animation: slideOut .8s;
+        opacity: 0;
+        pointer-events: none;
+        
+    }
+}
+
+
+
+@keyframes slideOut{
+    0%{
+        transform: translate(0);
+        opacity: 1;
     }
 
-    &--visible{
-        // Add animation when '&--hidden animation' ends
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(-150%);
+        
+    }
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(150%);
+        opacity: 0;
+
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateX(0);
+        visibility: visible;
+
     }
 }

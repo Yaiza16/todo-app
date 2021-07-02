@@ -12,14 +12,14 @@
 
 </head>
 <body>
-  <div class="app" data-theme="light">
+  <div class="app" data-theme="light" id="app">
     <header class="header">
       <div class="header-container">
         <div class="header-main">
           <h1 class="logo">Todo</h1>
-          <div class="toggle-container">
-            <img src="images/icon-moon.svg" class="toggle-icon">
-            <img src="images/icon-sun.svg" class="toggle-icon toggle-icon--hidden">
+          <div class="toggle-container" id="toggle">
+            <img src="images/icon-moon.svg" class="toggle-icon" id="icon-light">
+            <img src="images/icon-sun.svg" class="toggle-icon toggle-icon--hidden" id="icon-dark">
           </div>
         </div>
         <form action="#" class="task">
@@ -77,9 +77,8 @@
     <footer class="footer">
       <p class="footer__text">Drag and drop to reorder list</p>
     </footer>
-
   </div>
 
-  
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
