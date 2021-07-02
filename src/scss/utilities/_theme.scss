@@ -1,0 +1,10 @@
+@use 'variables.scss' as v;
+
+@each $theme-name, $theme-vars in v.$theme{
+    .app[data-theme=#{$theme-name}]{
+        //define a css variable for each color 
+        @each $name, $color in $theme-vars{
+            --#{$name}: #{$color};
+        }
+    }
+}

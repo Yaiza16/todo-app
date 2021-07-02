@@ -1,0 +1,60 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins' as m;
+@use '../utilities/functions' as f;
+
+.main{
+    background: var(--c-bg);
+    display: flex;
+    justify-content: center;
+}
+
+.main-container{
+    @include m.containerWidth;
+    margin-top: -3rem;
+    z-index: 2;
+}
+
+.todo-list{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.103);
+}
+
+
+// Dynamic status
+.dynamic-items-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--c-bg-task);
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--c-font-light);
+    font-weight: 400;
+    border-radius: 0 0 v.$border-radius-input v.$border-radius-input;
+}
+
+
+.items-status{
+    display: flex;
+    gap: .5rem;
+
+    &__item{
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+
+
+        &:hover{
+            color: var(--c-font);
+        }
+    }
+}
+
+.items-cleared{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+
+        &:hover{
+            color: var(--c-font);
+        }
+}
+

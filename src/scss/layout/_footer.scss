@@ -1,0 +1,17 @@
+@use '../utilities/mixins' as m;
+
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    background: var(--c-bg);
+    color: var(--c-font-light);
+
+
+    &__text{
+        @include m.containerWidth;
+        font-size: .8rem;
+        text-align: center;
+
+    }
+}

@@ -1,0 +1,6 @@
+@use 'functions' as f;
+
+@mixin containerWidth {
+    width: 38%;
+    min-width: f.toRem(500);
+}

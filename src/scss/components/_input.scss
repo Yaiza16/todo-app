@@ -1,0 +1,101 @@
+@use '../utilities/functions' as f;
+@use '../utilities/variables' as v;
+
+.task{
+    background-color: var(--c-bg-task);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    border-radius: v.$border-radius-input;
+    padding: 1rem;
+    position: relative;
+
+    &--list{
+        border-bottom: 2px solid var(--c-border-list-task);
+
+        &:first-child{
+            border-radius: v.$border-radius-input v.$border-radius-input 0 0;
+        }
+
+        &:not(:first-child){
+            border-radius: 0;
+        }
+
+        &:hover{
+            & .delete-icon-container{
+                display: flex;
+            }
+        }
+    }
+
+    &--completed{
+
+        & .button{
+            background: var(--c-gradient);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0s;
+
+            &:hover{
+                transform: unset;
+                border-color: unset;
+                border: unset;
+            }
+
+            &::after{
+                content: url(/dist/images/icon-check.svg);
+            }
+        }
+
+        & .input{
+            color: var(--c-font-completed);
+            text-decoration: line-through;
+        }
+    }
+}
+
+.button{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    position: relative;
+    background: var(--c-bg-task);
+    border: 1px solid var(--c-border-circle);
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: v.$transition;
+
+    &:hover{
+        border-color: var(--c-gradient-first) var(--c-gradient-first) var(--c-gradient-second) var(--c-gradient-second);
+        transform: rotate(-450deg);
+    }
+}
+
+.input{
+    font-size: f.toRem(18);
+    background-color: transparent;
+    font-family: inherit;
+    justify-items: stretch;
+    color: var(--c-font);
+    cursor: pointer;
+
+    &::placeholder{
+        color: var(--c-font-light);
+    }
+}
+
+.delete-icon-container{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    display: none;
+    transition: v.$transition;
+    cursor: pointer;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+
+</head>
+<body>
+  <div class="app" data-theme="light">
+    <header class="header">
+      <div class="header-container">
+        <div class="header-main">
+          <h1 class="logo">Todo</h1>
+          <div class="toggle-container">
+            <img src="images/icon-moon.svg" class="toggle-icon">
+            <img src="images/icon-sun.svg" class="toggle-icon toggle-icon--hidden">
+          </div>
+        </div>
+        <form action="#" class="task">
+          <button class="button"></button>
+          <input type="text" class="input" placeholder="Create a new todo...">
+          <!-- <input type="submit"> -->
+        </form>
+      </div>
+    </header>
+
+    <main class="main">
+        <div class="main-container">
+          <div class="todo-list">
+            <div class="task task--list task--completed">
+              <button class="button"></button>
+              <p class="input">Complete online JavaScript course</p>
+              <div class="delete-icon-container">
+                <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
+              </div>           
+            </div>
+
+            <div class="task task--list">
+              <button class="button"></button>
+              <p class="input">Job around the park 3x</p>
+              <div class="delete-icon-container">
+                <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
+              </div> 
+            </div>
+
+            <div class="task task--list">
+              <button class="button"></button>
+              <p class="input">10 minutes meditation</p>
+              <div class="delete-icon-container">
+                <img src="/dist/images/icon-cross.svg" alt="" class="delete-icon">
+              </div> 
+            </div>
+
+            <div class="dynamic-items-container">
+              <div class="items-left">
+                <p class="items-left__text"><span id="number-dynamic">5</span> items left</p>
+              </div>
+              <div class="items-status">
+                <p class="items-status__item" id="all-status">All</p>
+                <p class="items-status__item" id="active-status">Active</p>
+                <p class="items-status__item" id="completed-status">Completed</p>
+              </div>
+              <div class="items-cleared">
+                <p class="items-cleared__text">Clear Completed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">Drag and drop to reorder list</p>
+    </footer>
+
+  </div>
+
+  
+</body>
+</html>

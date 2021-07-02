@@ -1,0 +1,44 @@
+@use '../utilities/functions' as f;
+@use '../utilities/mixins' as m;
+
+.header{
+    position: relative;
+    width: 100%;
+    height: f.toRem(300);
+    background: var(--bg-header);
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+}
+
+.header-container{
+    @include m.containerWidth;
+    padding-top: 4.5rem;
+}
+
+.header-main{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.6rem;
+}
+
+.logo{
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    color: var(--c-logo);
+}
+
+.toggle-icon{
+
+    &--hidden{
+        display: none;
+        // Add animation
+    }
+
+    &--visible{
+        // Add animation when '&--hidden animation' ends
+    }
+}

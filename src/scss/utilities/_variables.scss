@@ -1,0 +1,38 @@
+$theme:(
+    "light":(
+        "c-logo": hsl(0, 0%, 100%),
+        "c-bg": hsl(0, 0%, 98%),
+        "c-bg-task": hsl(0, 0%, 100%),
+        "c-gradient": linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)),
+        "c-gradient-first": hsl(192, 100%, 67%),
+        "c-gradient-second": hsl(280, 87%, 65%),
+        "c-border-circle": hsl(236, 33%, 92%),
+        "c-border-list-task": hsl(236, 33%, 92%),
+        "c-font": hsl(235, 19%, 35%),
+        "c-font-light": hsl(236, 9%, 61%),
+        "c-font-completed": hsl(236, 33%, 92%),
+        "c-activated-filter": hsl(220, 98%, 61%),
+        "bg-header": url(/dist/images/bg-desktop-light.jpg)
+    ),
+
+    "dark":(
+        "c-logo": hsl(0, 0%, 0%),
+        "c-bg": hsl(0, 0%, 98%),
+        "c-bg-task": hsl(0, 0%, 0%),
+        "c-gradient": linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)),
+        "c-gradient-first": hsl(192, 100%, 67%),
+        "c-gradient-second": hsl(280, 87%, 65%),
+        "c-border-circle": hsl(236, 33%, 92%),
+        "c-border-list-task": hsl(236, 9%, 61%),
+        "c-font": hsl(0, 0%, 98%),
+        "c-font-light": hsl(236, 33%, 92%),
+        "c-font-completed": hsl(236, 33%, 92%),
+        "c-activated-filter": hsl(220, 98%, 61%),
+        "bg-header": url(/dist/images/bg-desktop-light.jpg)
+    )
+);
+
+$ff: 'Josefin Sans', sans-serif;
+
+$border-radius-input: .3rem;
+$transition: all .3s ease-in;
