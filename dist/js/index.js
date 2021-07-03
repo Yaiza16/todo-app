@@ -133,7 +133,6 @@ const setIcon = theme =>{
 // Load task list
 const taskListUpdate = (tasksList) => {
     todoContainer.innerHTML = ""
-    if (!tasksList == null){
         tasksList.forEach(task => {
             let container = document.createElement('div')
             container.classList.add('task', 'task--list')
@@ -165,7 +164,6 @@ const taskListUpdate = (tasksList) => {
     
             itemsLeftUpdate()
         });
-    }
     localStorage.setItem('tasks', JSON.stringify(tasks))
 
 }
@@ -187,8 +185,8 @@ const newTaskUpdate = () =>{
         "status": 'Actived'
     }
     tasks.push(newItemTask);
-    taskListUpdate(tasks)
     input.value = ""
+    taskListUpdate(tasks)
 }
 
 //Change focus status
@@ -224,8 +222,6 @@ const removeTask = cross =>{
     let itemPosition = -1;
     tasks.forEach(task =>{
         itemPosition++
-        console.log(item.innerHTML)
-        console.log(task.def)
         if (item.innerHTML == task.def){
             tasks.splice(itemPosition, 1)
         }
