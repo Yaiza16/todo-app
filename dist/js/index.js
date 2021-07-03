@@ -22,13 +22,22 @@ let tasks = []
 document.addEventListener('DOMContentLoaded', () =>{
     if (JSON.parse(localStorage.getItem('tasks')) == null){
         tasks = []
+    }else{
+        tasks = JSON.parse(localStorage.getItem('tasks'))
     }
-    if (!tasks == null){
+
+    if (!tasks == []){
         taskListUpdate(tasks)
         itemsLeftUpdate()
     }
-    app.dataset.theme = localStorage.getItem('theme');
-    setIcon(localStorage.getItem('theme'));
+
+    if (localStorage.getItem('theme') == null){
+        app.dataset.theme = light;
+    }
+    else{
+        app.dataset.theme = localStorage.getItem('theme');
+        setIcon(localStorage.getItem('theme'));
+    }
 })
 
 toggle.addEventListener('click', () =>{
@@ -143,7 +152,7 @@ const taskListUpdate = (tasksList) => {
             let iconContainer = document.createElement('div');
             iconContainer.classList.add('delete-icon-container')
             let icon = document.createElement('img');
-            icon.setAttribute('src', '/dist/images/icon-cross.svg')
+            icon.setAttribute('src', 'images/icon-cross.svg')
             icon.classList.add('delete-icon')
             iconContainer.appendChild(icon)
             container.appendChild(iconContainer)
