@@ -3,7 +3,7 @@
 .footer{
     display: flex;
     justify-content: center;
-    padding: 3rem 0;
+    padding: 6rem 0 3rem;
     background: var(--c-bg);
     color: var(--c-font-light);
 
@@ -13,5 +13,8 @@
         font-size: .8rem;
         text-align: center;
 
+        @include m.mq(lg){
+            @include m.containerWidthMobile
+        }
     }
 }

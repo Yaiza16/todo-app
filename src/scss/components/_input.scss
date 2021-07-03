@@ -54,6 +54,10 @@
             text-decoration: line-through;
         }
     }
+
+    &--sortableActive{
+        box-shadow: inset 0 0 30px var(--c-shadow-task-chosen);
+    }
 }
 
 .button{
@@ -78,7 +82,7 @@
 
 .input{
     font-size: f.toRem(18);
-    background-color: transparent;
+    background-color: var(--c-bg-task);
     font-family: inherit;
     justify-items: stretch;
     color: var(--c-font);

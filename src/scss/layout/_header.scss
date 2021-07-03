@@ -10,17 +10,36 @@
 
     display: flex;
     justify-content: center;
+
+    @include m.mq(md){
+        background: var(--bg-header-mobile);
+        height: f.toRem(200);
+        background-size: cover;
+
+    }
 }
 
 .header-container{
     @include m.containerWidth;
     padding-top: 4.5rem;
+
+    @include m.mq(lg){
+        @include m.containerWidthMobile
+    }
+
+    @include m.mq(md){
+        padding-top: 3rem;
+    }
 }
 
 .header-main{
     display: flex;
     justify-content: space-between;
     margin-bottom: 2.6rem;
+
+    @include m.mq(lg){
+        margin-bottom: .8rem;
+    }
 }
 
 .logo{
@@ -29,6 +48,14 @@
     text-transform: uppercase;
     letter-spacing: 1rem;
     color: var(--c-logo);
+
+    @include m.mq(lg){
+        @include m.containerWidthMobile
+    }
+
+    @include m.mq(md){
+        font-size: 1.8rem;
+    }
 }
 
 .toggle-container{

@@ -25,6 +25,7 @@ html {
   --c-gradient: linear-gradient(145deg, #57ddff, #c058f3);
   --c-gradient-first: #57ddff;
   --c-gradient-second: #c058f3;
+  --c-shadow-task-chosen: rgba(192, 88, 243, 0.199);
   --c-border-circle: #e4e5f1;
   --c-border-list-task: #e4e5f1;
   --c-font: #484b6a;
@@ -32,22 +33,25 @@ html {
   --c-font-completed: #e4e5f1;
   --c-activated-filter: #3a7bfd;
   --bg-header: url(/dist/images/bg-desktop-light.jpg);
+  --bg-header-mobile: url(/dist/images/bg-mobile-light.jpg);
 }
 
 .app[data-theme=dark] {
-  --c-logo: white;
+  --c-logo: #ffffff;
   --c-bg: #161722;
   --c-bg-task: #25273c;
   --c-gradient: linear-gradient(145deg, #57ddff, #c058f3);
   --c-gradient-first: #57ddff;
   --c-gradient-second: #c058f3;
+  --c-shadow-task-chosen: rgba(192, 88, 243, 0.199);
   --c-border-circle: #4d5066;
   --c-border-list-task: #393a4c;
   --c-font: #cacde8;
   --c-font-light: #4d5066;
   --c-font-completed: #4d5066;
   --c-activated-filter: #3a7bfd;
-  --bg-header: url(/dist/images/bg-desktop-light.jpg);
+  --bg-header: url(/dist/images/bg-desktop-dark.jpg);
+  --bg-header-mobile: url(/dist/images/bg-mobile-dark.jpg);
 }
 
 .app {
@@ -65,17 +69,41 @@ html {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 450px) {
+  .header {
+    background: var(--bg-header-mobile);
+    height: 12.5rem;
+    background-size: cover;
+  }
+}
 
 .header-container {
   width: 38%;
   min-width: 31.25rem;
   padding-top: 4.5rem;
 }
+@media only screen and (max-width: 650px) {
+  .header-container {
+    width: 85%;
+    max-width: 90%;
+    min-width: unset;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .header-container {
+    padding-top: 3rem;
+  }
+}
 
 .header-main {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2.6rem;
+}
+@media only screen and (max-width: 650px) {
+  .header-main {
+    margin-bottom: 0.8rem;
+  }
 }
 
 .logo {
@@ -84,6 +112,18 @@ html {
   text-transform: uppercase;
   letter-spacing: 1rem;
   color: var(--c-logo);
+}
+@media only screen and (max-width: 650px) {
+  .logo {
+    width: 85%;
+    max-width: 90%;
+    min-width: unset;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .logo {
+    font-size: 1.8rem;
+  }
 }
 
 .toggle-container {
@@ -141,9 +181,22 @@ html {
   margin-top: -3rem;
   z-index: 2;
 }
+@media only screen and (max-width: 650px) {
+  .main-container {
+    width: 85%;
+    max-width: 90%;
+    min-width: unset;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .main-container {
+    margin-top: -1.5rem;
+  }
+}
 
 .todo-list {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.103);
+  position: relative;
 }
 
 .dynamic-items-container {
@@ -156,6 +209,17 @@ html {
   color: var(--c-font-light);
   font-weight: 400;
   border-radius: 0 0 0.3rem 0.3rem;
+}
+@media only screen and (max-width: 650px) {
+  .dynamic-items-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .items-left {
+    order: 1;
+  }
 }
 
 .items-status {
@@ -175,6 +239,22 @@ html {
 .items-status__item:hover {
   color: var(--c-font);
 }
+@media only screen and (max-width: 650px) {
+  .items-status {
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    order: 3;
+    width: 100%;
+    background-color: var(--c-bg-task);
+    border-radius: 0.3rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 
 .items-cleared {
   cursor: pointer;
@@ -183,11 +263,16 @@ html {
 .items-cleared:hover {
   color: var(--c-font);
 }
+@media only screen and (max-width: 650px) {
+  .items-cleared {
+    order: 2;
+  }
+}
 
 .footer {
   display: flex;
   justify-content: center;
-  padding: 3rem 0;
+  padding: 6rem 0 3rem;
   background: var(--c-bg);
   color: var(--c-font-light);
 }
@@ -196,6 +281,13 @@ html {
   min-width: 31.25rem;
   font-size: 0.8rem;
   text-align: center;
+}
+@media only screen and (max-width: 650px) {
+  .footer__text {
+    width: 85%;
+    max-width: 90%;
+    min-width: unset;
+  }
 }
 
 .task {
@@ -239,6 +331,9 @@ html {
   color: var(--c-font-completed);
   text-decoration: line-through;
 }
+.task--sortableActive {
+  box-shadow: inset 0 0 30px var(--c-shadow-task-chosen);
+}
 
 .button {
   width: 1.5rem;
@@ -260,7 +355,7 @@ html {
 
 .input {
   font-size: 1.125rem;
-  background-color: transparent;
+  background-color: var(--c-bg-task);
   font-family: inherit;
   justify-items: stretch;
   color: var(--c-font);

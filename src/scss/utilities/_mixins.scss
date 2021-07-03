@@ -1,6 +1,21 @@
 @use 'functions' as f;
+@use 'variables' as v;
 
 @mixin containerWidth {
     width: 38%;
     min-width: f.toRem(500);
+}
+
+@mixin containerWidthMobile {
+    width: 85%;
+    max-width: 90%;
+    min-width: unset;
+}
+
+@mixin mq($key){
+    $size: map-get(v.$media-query, $key);
+
+    @media only screen and (max-width: $size){
+        @content;
+    }
 }

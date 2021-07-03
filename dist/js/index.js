@@ -236,6 +236,7 @@ let sortable = new Sortable(todoContainer, {
     animation: 150, 	
     easing: "cubic-bezier(0.83, 0, 0.17, 1)",
     disabled: false,
+    chosenClass: 'task--sortableActive',
     onSort: () =>{
         tasks = [];
         let status;
