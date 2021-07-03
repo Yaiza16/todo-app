@@ -46,7 +46,8 @@ toggle.addEventListener('click', () =>{
     toggleTheme()
 })
 
-form.addEventListener('submit', () => {
+form.addEventListener('submit', e => {
+    e.preventDefault()
     newTaskUpdate()
     input.value = ""
 })
