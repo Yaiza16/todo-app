@@ -253,6 +253,8 @@ let sortable = new Sortable(todoContainer, {
 
             tasks.unshift(newTask)
         })
+
+        localStorage.setItem('tasks', JSON.stringify(tasks))
     }
 })
 
