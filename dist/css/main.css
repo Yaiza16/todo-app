@@ -32,8 +32,8 @@ html {
   --c-font-light: #9394a5;
   --c-font-completed: #e4e5f1;
   --c-activated-filter: #3a7bfd;
-  --bg-header: url(/dist/images/bg-desktop-light.jpg);
-  --bg-header-mobile: url(/dist/images/bg-mobile-light.jpg);
+  --bg-header: url(../images/bg-desktop-light.jpg);
+  --bg-header-mobile: url(../images/bg-mobile-light.jpg);
 }
 
 .app[data-theme=dark] {
@@ -50,8 +50,8 @@ html {
   --c-font-light: #4d5066;
   --c-font-completed: #4d5066;
   --c-activated-filter: #3a7bfd;
-  --bg-header: url(/dist/images/bg-desktop-dark.jpg);
-  --bg-header-mobile: url(/dist/images/bg-mobile-dark.jpg);
+  --bg-header: url(../images/bg-desktop-dark.jpg);
+  --bg-header-mobile: url(../images/bg-mobile-dark.jpg);
 }
 
 .app {

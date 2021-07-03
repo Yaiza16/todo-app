@@ -13,8 +13,8 @@ $theme:(
         "c-font-light": hsl(236, 9%, 61%),
         "c-font-completed": hsl(236, 33%, 92%),
         "c-activated-filter": hsl(220, 98%, 61%),
-        "bg-header": url(/dist/images/bg-desktop-light.jpg),
-        "bg-header-mobile": url(/dist/images/bg-mobile-light.jpg)
+        "bg-header": url(../images/bg-desktop-light.jpg),
+        "bg-header-mobile": url(../images/bg-mobile-light.jpg)
     ),
 
     "dark":(
@@ -31,8 +31,8 @@ $theme:(
         "c-font-light": hsl(233, 14%, 35%),
         "c-font-completed": hsl(233, 14%, 35%),
         "c-activated-filter": hsl(220, 98%, 61%),
-        "bg-header": url(/dist/images/bg-desktop-dark.jpg),
-        "bg-header-mobile": url(/dist/images/bg-mobile-dark.jpg)
+        "bg-header": url(../images/bg-desktop-dark.jpg),
+        "bg-header-mobile": url(../images/bg-mobile-dark.jpg)
     )
 );
 
