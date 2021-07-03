@@ -9,6 +9,7 @@ const numberDynamic = document.getElementById('number-dynamic')
 const itemsStatus = document.getElementById('items-status')
 const itemStatus = document.querySelectorAll('.items-status__item')
 const clearCompleted = document.getElementById('clear-completed');
+
 let buttonTask;
 
 
@@ -30,8 +31,14 @@ let tasks = [
 ]
 
 
+
+
 document.addEventListener('DOMContentLoaded', () =>{
+    tasks = JSON.parse(localStorage.getItem('tasks'))
     taskListUpdate(tasks)
+    itemsLeftUpdate()
+    app.dataset.theme = localStorage.getItem('theme');
+    setIcon(localStorage.getItem('theme'));
 })
 
 toggle.addEventListener('click', () =>{
@@ -80,8 +87,11 @@ let toggleTheme = () =>{
         // Change app theme mode
         if (app.dataset.theme == 'light'){
             app.dataset.theme = 'dark';
+            localStorage.setItem('theme', 'dark');
         }else{
-            app.dataset.theme = 'light'
+            app.dataset.theme = 'light';
+            localStorage.setItem('theme', 'light')
+
         }
 
         //Change icons
@@ -99,6 +109,22 @@ let toggleTheme = () =>{
             iconLight.disabled = true;
         }
     }
+
+// Set icon localStorage
+const setIcon = theme =>{
+    let currentTheme = app.dataset.theme;
+    if (currentTheme == 'light'){
+        if (iconLight.classList.contains('toggle-icon--hidden')){
+            iconLight.classList.remove('toggle-icon--hidden')
+            iconDark.classList.add('toggle-icon--hidden')
+        }
+    }else{
+        if (iconDark.classList.contains('toggle-icon--hidden')){
+            iconDark.classList.remove('toggle-icon--hidden')
+            iconLight.classList.add('toggle-icon--hidden')
+        }   
+    }
+}
 
 
 // Load task list
@@ -135,6 +161,8 @@ const taskListUpdate = (tasksList) => {
 
         itemsLeftUpdate()
     });
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+
 }
 
 const itemsLeftUpdate = () =>{
@@ -196,4 +224,3 @@ const removeTask = cross =>{
 }
 
 
-//Clear completed
