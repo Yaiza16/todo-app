@@ -14,28 +14,15 @@ let buttonTask;
 let isSortableDisabled = false;
 
 
-let tasks = [
-    {
-        "def": '10 minutes meditation',
-        "status": 'Actived'
-    },
-
-    {
-        "def": 'Job around the park 3x',
-        "status": 'Actived'
-    },
-
-    {
-        'def': 'Complete online JavaScript course',
-        'status': 'Completed'
-    }
-]
+let tasks = []
 
 
 
 
 document.addEventListener('DOMContentLoaded', () =>{
-    tasks = JSON.parse(localStorage.getItem('tasks'))
+    if (JSON.parse(localStorage.getItem('tasks')) == null){
+        tasks = []
+    }
     if (!tasks == null){
         taskListUpdate(tasks)
         itemsLeftUpdate()
