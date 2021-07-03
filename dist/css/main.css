@@ -325,7 +325,7 @@ html {
   border: unset;
 }
 .task--completed .button::after {
-  content: url(/dist/images/icon-check.svg);
+  content: url(../images/icon-check.svg);
 }
 .task--completed .input {
   color: var(--c-font-completed);
