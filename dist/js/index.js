@@ -11,6 +11,7 @@ const itemStatus = document.querySelectorAll('.items-status__item')
 const clearCompleted = document.getElementById('clear-completed');
 
 let buttonTask;
+let isSortableDisabled = false;
 
 
 let tasks = [
@@ -47,6 +48,7 @@ toggle.addEventListener('click', () =>{
 
 form.addEventListener('submit', () => {
     newTaskUpdate()
+    input.value = ""
 })
 
 todoContainer.addEventListener('click', e =>{
@@ -77,6 +79,7 @@ clearCompleted.addEventListener('click',() =>{
     let newList = tasks.filter(el => el.status == "Actived")
     tasks = newList
     taskListUpdate(tasks);
+    focusChange(document.getElementById('all-status'))
 })
 
 
@@ -196,14 +199,19 @@ const focusChange = (item) =>{
     if (item == document.getElementById('all-status')){
         taskListUpdate(tasks)
         item.classList.add('items-status__item--actived')
+        sortable.options.disabled = false;
     } else if(item == document.getElementById('active-status')){
         let newList = tasks.filter(el => el.status == "Actived")
         taskListUpdate(newList);
-        item.classList.add('items-status__item--actived')
+        item.classList.add('items-status__item--actived');
+        sortable.options.disabled = true;
+        
     } else if(item == document.getElementById('completed-status')){
         let newList = tasks.filter(el => el.status == "Completed")
         taskListUpdate(newList);
         item.classList.add('items-status__item--actived')
+        sortable.options.disabled = true;
+
     }
 }
 
@@ -222,5 +230,32 @@ const removeTask = cross =>{
     taskListUpdate(tasks)
     itemsLeftUpdate()
 }
+
+//Sortable
+let sortable = new Sortable(todoContainer, {
+    animation: 150, 	
+    easing: "cubic-bezier(0.83, 0, 0.17, 1)",
+    disabled: false,
+    onSort: () =>{
+        tasks = [];
+        let status;
+        let newOrderedList = todoContainer.childNodes;
+        newOrderedList.forEach(item =>{
+            if (item.classList.contains('task--completed')){
+                status = 'Completed'
+            }else{
+                status = 'Actived'
+            }
+
+            let def = item.childNodes[1].innerHTML;
+            let newTask = {
+                'def': def,
+                'status': status
+            }
+
+            tasks.unshift(newTask)
+        })
+    }
+})
 
 
