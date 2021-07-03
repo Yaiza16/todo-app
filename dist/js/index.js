@@ -36,8 +36,10 @@ let tasks = [
 
 document.addEventListener('DOMContentLoaded', () =>{
     tasks = JSON.parse(localStorage.getItem('tasks'))
-    taskListUpdate(tasks)
-    itemsLeftUpdate()
+    if (!tasks == null){
+        taskListUpdate(tasks)
+        itemsLeftUpdate()
+    }
     app.dataset.theme = localStorage.getItem('theme');
     setIcon(localStorage.getItem('theme'));
 })
